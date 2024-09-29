@@ -72,6 +72,10 @@ body{
     margin: 6px 14px;
 }
 
+.btn:active {
+    border: 2px solid var(--dark-color);
+}
+
 .text-result {
     font-size: 2em;
     display: none;
