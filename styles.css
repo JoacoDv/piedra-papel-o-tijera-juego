@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --main-color: #A66E38;
+    --ligth-orange-color: #FFAD60;
+    --ligth-yellow-color: #FFEEAD;
+    --ligth-green-color: #96CEB4;
+    --dark-color: #311f0d;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    background-color: var(--main-color);
+    color: var(--ligth-yellow-color);
+    text-align: center;
+}
+
+.game {
+    max-width: 1200px;
+    max-height: 900px;
+    margin: auto;
+}
+
+.title {
+    margin: 20px 10px;
+}
+
+.rules {
+    margin: 15px;
+    font-size: 1.2em;
+}
+
+.rules ul li {
+    list-style: none;
+}
+
+.score{
+    margin: auto;
+    position: relative;
+    height: 150px;
+    width: 900px;
+}
+
+.score-player{
+    position: absolute;
+    bottom: 50;
+    left: 0;
+}
+
+.score-pc {
+    position: absolute;
+    bottom: 50;
+    right: 0;
+}
+
+.result-play {
+    position: absolute;
+    bottom: 0;
+    left: 50;
+    margin: 10px;
+}
+
+.btn {
+    background-image: linear-gradient(var(--ligth-orange-color), var(--ligth-yellow-color));
+    border: 3px solid transparent;
+    padding: 8px 24px;
+    border-radius: 18px;
+    color: var(--dark-color);
+    margin: 6px 14px;
+}
+
+.text-result {
+    font-size: 2em;
+    display: none;
+}

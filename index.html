@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Piedra Papel o Tijera</title>
+</head>
+<body>
+
+    <div class="game">
+    
+    <h1 class="title">PIEDRA PAPEL O TIJERA</h1>
+
+    <details class="rules">
+        <summary>REGLAS:</summary>
+        <p>El objetivo es vencer al oponente seleccionando el arma que gana, según las siguientes reglas:
+        </p>
+        <ul>
+            <li>La piedra aplasta la tijera.</li>
+            <li>La tijera corta el papel.</li>
+            <li>El papel envuelve la piedra.</li>
+            <li>En caso de empate (que dos jugadores elijan el mismo elemento), se juega otra vez.</li>
+        </ul>
+    </details>
+
+        <div class="score">
+            <h2 class="score-player">PUNTUACION JUGADOR: <span class="score-player-number">0</span></h2>
+            <h2 class="score-pc">PUNTUACION PC: <span class="score-number-pc">0</span></h2>
+            <p class="result-play"></p>
+        </div>
+
+        <button type="button" class="btn btn-piedra">PIEDRA</button>
+        <button type="button" class="btn btn-papel">PAPEL</button>
+        <button type="button" class="btn btn-tijera">TIJERA</button>
+
+        <div class="result">
+            <p class="text-result">El ganador es: <span class="winner"></span></p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
