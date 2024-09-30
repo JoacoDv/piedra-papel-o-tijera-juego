@@ -5,7 +5,7 @@ const buttonPiedra = document.querySelector(".btn-piedra");
 const buttonPapel = document.querySelector(".btn-papel");
 const buttonTijera = document.querySelector(".btn-tijera");
 const buttonReset = document.querySelector(".btn-reset");
-const controls = document.querySelector("controls")
+const controls = document.querySelector(".controls")
 const textWinner = document.querySelector(".winner");
 const winner = document.querySelector(".winner");
 const arrChoise = ["piedra", "papel", "tijera"];
@@ -30,7 +30,7 @@ function play(playing, pcPlaying) {
         if (scorePlayer === 3){
             textWinner.innerText = "Ganaste ¿Quieres jugar de nuevo?";
             controls.style.display = 'none';
-            buttonReset.style.display = "none";
+            buttonReset.style.display = "inline";
         }
     } else {
         resultPlay.innerText = `Perdiste esta ronda, elegiste ${playing} y la Pc eligio ${pcPlaying}`;
@@ -39,7 +39,7 @@ function play(playing, pcPlaying) {
         if (scorePc === 3){   
             textWinner.innerText = "Perdiste ¿Quieres jugar de nuevo?";
             controls.style.display = "none";
-            buttonReset.style.display = "none";
+            buttonReset.style.display = "inline";
         }
     }
 }
@@ -49,10 +49,10 @@ function reset() {
     scorePlayer = 0;
     scorePcText.innerText = scorePc;
     scorePlayerText.innerText = scorePlayer;
-    resultPlay.innerTeext = "";
-    textWinner.innerText = "";
+    resultPlay.innerText = " ";
+    textWinner.innerText = " ";
     controls.style.display = "inline";
-    buttonReset.style.display = "block";
+    buttonReset.style.display = "none";
 }
 
 buttonPiedra.addEventListener("click", function () { play("piedra", pcPlay())});
