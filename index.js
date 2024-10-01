@@ -30,12 +30,13 @@ function pcPlay() {
 function play(playing, pcPlaying) {
     if (playing === pcPlaying){
         resultPlay.innerText = `Ambos eligieron ${playing}. Es un empate.`;
-        
+        pcChoise(pcPlaying);
     } else if (playing === "piedra" && pcPlaying === "tijera" || 
         playing === "papel" && pcPlaying === "piedra" ||
         playing === "tijera" && pcPlaying === "papel"
     ){
         resultPlay.innerText = `Ganaste esta ronda, elegiste ${playing} y la Pc eligio ${pcPlaying}.`;
+        pcChoise(pcPlaying);
         scorePlayer++;
         scorePlayerText.innerText = scorePlayer;
         if (scorePlayer === 3){
@@ -45,6 +46,7 @@ function play(playing, pcPlaying) {
         }
     } else {
         resultPlay.innerText = `Perdiste esta ronda, elegiste ${playing} y la Pc eligio ${pcPlaying}`;
+        pcChoise(pcPlaying);
         scorePc++;
         scorePcText.innerText = scorePc;
         if (scorePc === 3){   
@@ -66,8 +68,47 @@ function reset() {
     buttonReset.style.display = "none";
 }
 
-buttonPiedra.addEventListener("click", function () { play("piedra", pcPlay())});
-buttonPapel.addEventListener("click", function () { play("papel", pcPlay())});
-buttonTijera.addEventListener("click", function () { play("tijera", pcPlay())});
-buttonReset.addEventListener("click", function () {reset()})
+function pcChoise(pcPlaying) {
+    if (pcPlaying === "piedra"){
+        imgPiedraPc.style.display = "block";
+    }
+    else if (pcPlaying === "papel") {
+        imgPapelPc.style.display = "block";
+    } 
+    else {
+        imgTijeraPc.display.style = "block";
+    }
+}
 
+const resetImg = () => {
+    imgPapelPc.style.display = "none";
+    imgPiedraPc.style.display = "none";
+    imgTijeraPc.style.display = "none";
+    imgPapelPlayer.style.display = "none";
+    imgPiedraPc.style.display = "none";
+    imgTijeraPc.style.display = "none";
+}
+
+
+
+buttonPiedra.addEventListener("click", () => { 
+    play("piedra", pcPlay());
+    resetImg();
+    imgPiedraPlayer.style.display = "block";
+});
+buttonPapel.addEventListener("click", () => { 
+    play("papel", pcPlay());
+    resetImg();
+    imgPapelPlayer.style.display = "block";
+});
+buttonTijera.addEventListener("click", () => { 
+    play("tijera", pcPlay());
+    resetImg();
+    imgTijeraPlayer.style.display = "block";
+});
+buttonReset.addEventListener("click", () => {
+    reset();
+    resetImg();
+})
+
+resetImg();

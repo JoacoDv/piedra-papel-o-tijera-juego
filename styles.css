@@ -64,11 +64,25 @@ img{
 .pc-img {
     right: 120px;
     bottom: 40px;
+    display: none;
 }
 
 .player-img {
     left: 120px;
     bottom: 40px;
+    display: none;
+}
+
+.winner-img {
+    border: 3px solid var(--ligth-green-color);
+}
+
+.lost-img {
+    border: 3px solid red;
+}
+
+.tie-img {
+    border: 3px solid gray;
 }
 
 .result-play {
