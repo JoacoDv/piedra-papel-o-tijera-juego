@@ -56,10 +56,25 @@ body{
     right: 0;
 }
 
+img{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+.pc-img {
+    right: 120px;
+    bottom: 40px;
+}
+
+.player-img {
+    left: 120px;
+    bottom: 40px;
+}
+
 .result-play {
     position: absolute;
     bottom: 0;
-    right: 80;
+    left: 240px;
     margin: 10px;
 }
 

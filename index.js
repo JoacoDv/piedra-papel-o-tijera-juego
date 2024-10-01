@@ -1,3 +1,13 @@
+// IMAGENES
+
+const imgPiedraPc = document.querySelector(".pc-piedra-img");
+const imgPapelPc = document.querySelector(".pc-papel-img");
+const imgTijeraPc = document.querySelector(".pc-tijera-img");
+const imgPiedraPlayer = document.querySelector(".player-piedra-img");
+const imgPapelPlayer = document.querySelector(".player-papel-img");
+const imgTijeraPlayer = document.querySelector(".player-tijera-img");
+
+// BOTONES Y TEXTO
 const scorePcText = document.querySelector(".score-number-pc");
 const scorePlayerText = document.querySelector(".score-player-number");
 const resultPlay = document.querySelector(".result-play");
@@ -20,6 +30,7 @@ function pcPlay() {
 function play(playing, pcPlaying) {
     if (playing === pcPlaying){
         resultPlay.innerText = `Ambos eligieron ${playing}. Es un empate.`;
+        
     } else if (playing === "piedra" && pcPlaying === "tijera" || 
         playing === "papel" && pcPlaying === "piedra" ||
         playing === "tijera" && pcPlaying === "papel"
