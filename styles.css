@@ -8,6 +8,8 @@
     --ligth-orange-color: #FFAD60;
     --ligth-yellow-color: #FFEEAD;
     --ligth-green-color: #96CEB4;
+    --ligth-red-color: #aa3535;
+    --ligth-gray-color: #8a8787;
     --dark-color: #311f0d;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -74,15 +76,15 @@ img{
 }
 
 .winner-img {
-    border: 3px solid var(--ligth-green-color);
+    border: 6px solid var(--ligth-green-color);
 }
 
 .lost-img {
-    border: 3px solid red;
+    border: 6px solid var(--ligth-red-color);
 }
 
 .tie-img {
-    border: 3px solid gray;
+    border: 6px solid var(--ligth-gray-color);
 }
 
 .result-play {

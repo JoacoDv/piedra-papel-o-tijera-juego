@@ -31,12 +31,25 @@ function play(playing, pcPlaying) {
     if (playing === pcPlaying){
         resultPlay.innerText = `Ambos eligieron ${playing}. Es un empate.`;
         pcChoise(pcPlaying);
-    } else if (playing === "piedra" && pcPlaying === "tijera" || 
+        imgPapelPlayer.classList.add("tie-img");
+        imgPiedraPlayer.classList.add("tie-img");
+        imgTijeraPlayer.classList.add("tie-img");
+        imgPapelPc.classList.add("tie-img");
+        imgPiedraPc.classList.add("tie-img");
+        imgTijeraPc.classList.add("tie-img");
+    } 
+    else if (playing === "piedra" && pcPlaying === "tijera" || 
         playing === "papel" && pcPlaying === "piedra" ||
         playing === "tijera" && pcPlaying === "papel"
     ){
         resultPlay.innerText = `Ganaste esta ronda, elegiste ${playing} y la Pc eligio ${pcPlaying}.`;
         pcChoise(pcPlaying);
+        imgPapelPlayer.classList.add("winner-img");
+        imgPiedraPlayer.classList.add("winner-img");
+        imgTijeraPlayer.classList.add("winner-img");
+        imgPapelPc.classList.add("lost-img");
+        imgPiedraPc.classList.add("lost-img");
+        imgTijeraPc.classList.add("lost-img");
         scorePlayer++;
         scorePlayerText.innerText = scorePlayer;
         if (scorePlayer === 3){
@@ -44,9 +57,16 @@ function play(playing, pcPlaying) {
             controls.style.display = 'none';
             buttonReset.style.display = "inline";
         }
-    } else {
+    } 
+    else {
         resultPlay.innerText = `Perdiste esta ronda, elegiste ${playing} y la Pc eligio ${pcPlaying}`;
         pcChoise(pcPlaying);
+        imgPapelPlayer.classList.add("lost-img");
+        imgPiedraPlayer.classList.add("lost-img");
+        imgTijeraPlayer.classList.add("lost-img");
+        imgPapelPc.classList.add("winner-img");
+        imgPiedraPc.classList.add("winner-img");
+        imgTijeraPc.classList.add("winner-img");
         scorePc++;
         scorePcText.innerText = scorePc;
         if (scorePc === 3){   
@@ -76,7 +96,7 @@ function pcChoise(pcPlaying) {
         imgPapelPc.style.display = "block";
     } 
     else {
-        imgTijeraPc.display.style = "block";
+        imgTijeraPc.style.display = "block";
     }
 }
 
@@ -85,25 +105,43 @@ const resetImg = () => {
     imgPiedraPc.style.display = "none";
     imgTijeraPc.style.display = "none";
     imgPapelPlayer.style.display = "none";
-    imgPiedraPc.style.display = "none";
-    imgTijeraPc.style.display = "none";
+    imgPiedraPlayer.style.display = "none";
+    imgTijeraPlayer.style.display = "none";
+    imgPapelPlayer.classList.remove("tie-img");
+    imgPiedraPlayer.classList.remove("tie-img");
+    imgTijeraPlayer.classList.remove("tie-img");
+    imgPapelPc.classList.remove("tie-img");
+    imgPiedraPc.classList.remove("tie-img");
+    imgTijeraPc.classList.remove("tie-img");
+    imgPapelPlayer.classList.remove("winner-img");
+    imgPiedraPlayer.classList.remove("winner-img");
+    imgTijeraPlayer.classList.remove("winner-img");
+    imgPapelPc.classList.remove("winner-img");
+    imgPiedraPc.classList.remove("winner-img");
+    imgTijeraPc.classList.remove("winner-img");
+    imgPapelPlayer.classList.remove("lost-img");
+    imgPiedraPlayer.classList.remove("lost-img");
+    imgTijeraPlayer.classList.remove("lost-img");
+    imgPapelPc.classList.remove("lost-img");
+    imgPiedraPc.classList.remove("lost-img");
+    imgTijeraPc.classList.remove("lost-img");
 }
 
 
 
-buttonPiedra.addEventListener("click", () => { 
-    play("piedra", pcPlay());
+buttonPiedra.addEventListener("click", () => {     
     resetImg();
+    play("piedra", pcPlay());
     imgPiedraPlayer.style.display = "block";
 });
-buttonPapel.addEventListener("click", () => { 
-    play("papel", pcPlay());
+buttonPapel.addEventListener("click", () => {     
     resetImg();
+    play("papel", pcPlay());
     imgPapelPlayer.style.display = "block";
 });
-buttonTijera.addEventListener("click", () => { 
-    play("tijera", pcPlay());
+buttonTijera.addEventListener("click", () => {     
     resetImg();
+    play("tijera", pcPlay());
     imgTijeraPlayer.style.display = "block";
 });
 buttonReset.addEventListener("click", () => {
@@ -111,4 +149,4 @@ buttonReset.addEventListener("click", () => {
     resetImg();
 })
 
-resetImg();
+
